@@ -1,5 +1,11 @@
-export default function manageBand(state = {
+export default function manageBand(currentState = {
   bands: [],
 }, action) {
-  return state
+  switch(action.type) {
+    case 'ADD_BAND' :
+      return {
+        bands: [...currentState.bands, action.payload]
+      }
+  }
+  return currentState
 };
